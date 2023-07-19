@@ -20,7 +20,7 @@ from personal_site.views import home
 
 
 urlpatterns = [
-    path("", home),
+    path("", home, name="home"),
     path("admin/", admin.site.urls),
     path("blog/", include("blog.urls")),
 ]

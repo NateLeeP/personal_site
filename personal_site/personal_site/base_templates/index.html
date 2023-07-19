@@ -1,9 +1,35 @@
 <!DOCTYPE html>
-<h1>
-    Nates Personal Site
-</h1>
+
+<head>
+    <title>Nate's Website</title>
+    <style>
+        li {
+            display: inline;
+            margin: 0px 10px 0px 0px;
+        }
+
+        a.home {
+            text-decoration: none;
+        }
+
+        div {
+            display: flex;
+            border-bottom: solid black;
+        }
+    </style>
+</head>
 
 <body>
+    {% block page_title %}
+    <h1>
+        Nate P's Groovy Site
+    </h1>
+    {% endblock %}
+    <div>
+        <li><a class="home" href="{% url 'home' %}">Home</a></li>
+        <li><a class="home" href="{% url 'blog-home' %}">Blog</a></li>
+        <li><a class="home" href="#">Videos</a></li>
+    </div>
     {% block body %}
     {% endblock %}
 </body>

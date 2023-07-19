@@ -1,5 +1,14 @@
 {% extends "base_templates/index.html" %}
 
+{% block page_title %}
+<h2>
+    Nate P's Groovy Blog
+</h2>
+<p>
+    Most recent blogs here
+</p>
+{% endblock %}
+
 {% block body %}
 {% for post in content %}
 <p>
