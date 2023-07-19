@@ -15,8 +15,6 @@ def index(request):
 
 
 def post_page(request, id):
-    content = Posts.objects.get(id=id)
+    post = Posts.objects.get(id=id)
 
-    return HttpResponse(
-        f"You're looking at post {id} with content {content.post_body} written by {content.author.name}"
-    )
+    return render(request, "blog/post.html", {"post": post})
