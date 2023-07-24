@@ -18,3 +18,7 @@ def post_page(request, id):
     post = Posts.objects.get(id=id)
 
     return render(request, "blog/post.html", {"post": post})
+
+
+def new_post_page(request):
+    return render(request, "blog/new_post.html")
