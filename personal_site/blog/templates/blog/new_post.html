@@ -5,4 +5,11 @@
 <h2>
     Create a new post
 </h2>
+<form action="{% url 'blog:new-post-page' %}" method="post">
+    {% csrf_token %}
+    <textarea name="blog-body">
+
+    </textarea>
+    <input type="submit" />
+</form>
 {% endblock %}

@@ -5,7 +5,7 @@
         <h2>
             <i>{{post}}</i> 
         </h2>
-        <a href="{% url 'blog-home' %}">Home</a>
+        <a href="{% url 'blog:home' %}">Home</a>
     </div>
     <p>Published on: {{ post.published_at }}</p>
     <p>Last updated: {{ post.updated_at }}</p>

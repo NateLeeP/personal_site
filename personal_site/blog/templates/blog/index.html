@@ -12,7 +12,7 @@
 {% block body %}
 {% for post in content %}
 <p>
-    <a href="{% url 'post-page' post.id %}">{{ post }} </a>
+    <a href="{% url 'blog:post-page' post.id %}">{{ post }} </a>
 </p>
 {% endfor %}
 {% endblock %}
