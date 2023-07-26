@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from django.http import HttpResponse
-from .models import Post, Author
+from .models import Post, Author, PostForm
 
 # Render does 3 in 1 - loads template, fills context, and retuns an
 # HTTPResponse. You NEED to retun an HTTPResponse for each Django view.
@@ -22,14 +22,13 @@ def post_page(request, id):
 
 def new_post_page(request):
     print(request)
-    
+    form = PostForm()
     if request.method == 'POST':
         post = Post()
-        author = Author.objects.get(id=1)
-        post.post_body = request.POST['blog-body']
-        post.post_title = request.POST['blog-title']
+        author = Author.objects.get(id=request.POST['author'])
+        post.post_body = request.POST['post_body']
+        post.post_title = request.POST['post_title']
         post.author = author
         post.save()
         print(request.POST)
-        print(request.POST['blog-body'])
-    return render(request, "blog/new_post.html")
+    return render(request, "blog/new_post.html", {'form': form})

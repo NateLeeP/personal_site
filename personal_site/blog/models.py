@@ -1,5 +1,7 @@
 from django.db import models
 from datetime import datetime
+from django.forms import ModelForm
+from tinymce.widgets import TinyMCE
 
 # Create your models here.
 
@@ -22,3 +24,11 @@ class Post(models.Model):
     # Author name for now - will be ID later. Notably, if I assign it as a 'foreign'
     # key, Django will handle the id automatically.
     author = models.ForeignKey(Author, on_delete=models.CASCADE)
+
+class PostForm(ModelForm):
+    class Meta:
+        model= Post
+        fields = ["post_body", "post_title", "author"]
+        widgets = {
+            "post_body": TinyMCE(attrs={'cols': 80, 'rows': 30})
+        }
