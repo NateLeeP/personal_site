@@ -21,14 +21,15 @@ def post_page(request, id):
 
 
 def new_post_page(request):
-    print(request)
-    form = PostForm()
+    if request.method == "GET":
+        post = Post.objects.get(pk=1)
+        form = PostForm(instance=post)
     if request.method == 'POST':
-        post = Post()
-        author = Author.objects.get(id=request.POST['author'])
-        post.post_body = request.POST['post_body']
-        post.post_title = request.POST['post_title']
-        post.author = author
-        post.save()
+        form = PostForm(request.POST)
+        if form.is_valid():
+            print('Form is valid')
+            form.save()
+        else:
+            print('Nope, not valid')
         print(request.POST)
     return render(request, "blog/new_post.html", {'form': form})
