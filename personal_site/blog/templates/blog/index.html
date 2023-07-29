@@ -10,6 +10,9 @@
 {% endblock %}
 
 {% block body %}
+{% if is_authenticated %}
+<a href="{% url 'blog:create-post' %}">Create new post</a>
+{% endif %}
 {% for post in content %}
 <p>
     <a href="{% url 'blog:post-page' post.id %}">{{ post }} </a>

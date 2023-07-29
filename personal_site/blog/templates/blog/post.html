@@ -6,6 +6,9 @@
             <i>{{post}}</i> 
         </h2>
         <a href="{% url 'blog:home' %}">Home</a>
+        {% if is_authenticated %}
+        <a href="{% url 'blog:edit-post' post_id %}">Edit Post</a>
+        {% endif %}
     </div>
     <p>Published on: {{ post.published_at }}</p>
     <p>Last updated: {{ post.updated_at }}</p>
