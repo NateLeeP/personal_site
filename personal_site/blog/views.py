@@ -41,4 +41,4 @@ def edit_post(request, id):
         form = PostForm(request.POST, instance=post_obj)
         if form.is_valid():
             form.save()
-    return render(request, "blog/create_post.html", {'form': form})
+    return render(request, "blog/edit_post.html", {'form': form, 'post_id': id})
