@@ -1,9 +1,12 @@
 from django.shortcuts import render
 from .models import Post, PostForm
+from django.views.decorators.csrf import csrf_exempt
 from django.contrib.auth.decorators import login_required
 # Render does 3 in 1 - loads template, fills context, and retuns an
 # HTTPResponse. You NEED to retun an HTTPResponse for each Django view.
 from django.shortcuts import render
+from django.http import JsonResponse
+import os
 
 # Create your views here.
 
@@ -42,3 +45,20 @@ def edit_post(request, id):
         if form.is_valid():
             form.save()
     return render(request, "blog/edit_post.html", {'form': form, 'post_id': id})
+
+@csrf_exempt
+def upload_image(request):
+    file_obj = request.FILES['file']
+    dirname = os.path.dirname(__file__)
+    print(f"The directory name {dirname}")
+    relpath = os.path.join('static/blog/images', file_obj.name)
+    print(f"The relative path name {relpath}")
+    file_path = os.path.join(dirname, relpath)
+    print(file_path)
+    with open(file_path, 'wb+') as f:
+        for chunk in file_obj.chunks():
+            f.write(chunk)
+    return JsonResponse({
+            'message': 'Image uploaded successfully',
+            'location': '/' + relpath
+        })
