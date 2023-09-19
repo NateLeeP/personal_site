@@ -1,0 +1,20 @@
+article img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 20px 0;
+}
+
+#comments {
+    margin-top: 40px;
+}
+
+.comment {
+    border-top: 1px solid #eaeaea;
+    padding: 10px 0;
+    margin-top: 10px;
+}
+
+.comment:first-child {
+    border-top: none;
+}

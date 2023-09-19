@@ -20,9 +20,8 @@ from personal_site.views import home, about_me
 
 
 urlpatterns = [
-    path("", home, name="home"),
-    path("about-me", about_me,name="about-me"),
+    path("", about_me, name="home"),
     path("admin/", admin.site.urls),
     path("blog/", include("blog.urls")),
-    path('tinymce/', include('tinymce.urls')),
+    path("tinymce/", include("tinymce.urls")),
 ]

@@ -1,35 +1,25 @@
+{% load static %}
+
 <!DOCTYPE html>
+<html lang="en">
 
 <head>
-    <title>Nate's Website</title>
-    <style>
-        li {
-            display: inline;
-            margin: 0px 10px 0px 0px;
-        }
-
-        a.home {
-            text-decoration: none;
-        }
-
-        div {
-            display: flex;
-            border-bottom: solid black;
-        }
-    </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'blog/chatgpt_style.css' %}">
+    <title>Nate P Island</title>
 </head>
 
 <body>
-    {% block page_title %}
-    <h1>
-        Nate P's Groovy Site
-    </h1>
-    {% endblock %}
-    <div>
-        <li><a class="home" href="{% url 'home' %}">Home</a></li>
-        <li><a class="home" href="{% url 'blog:home' %}">Blog</a></li>
-        <li><a class="home" href="{% url 'about-me' %}">About Me</a></li>
-    </div>
+    <header>
+        <h1>Nate P Island</h1>
+        <nav>
+            <ul>
+                <li><a href="{% url 'home' %}">Home</a></li>
+                <li><a href="{% url 'blog:home' %}">Blog</a></li>
+            </ul>
+        </nav>
+    </header>
     {% block body %}
     {% endblock %}
 </body>

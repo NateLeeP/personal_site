@@ -1,0 +1,41 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'blog/chatgpt_style.css' %}">
+    <title>Your Blog Title</title>
+</head>
+
+<body>
+
+    <header>
+        <h1>Your Blog Title</h1>
+        <nav>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <article>
+            <h2>Blog Post Title</h2>
+            <p>Date: <time datetime="2023-09-19">September 19, 2023</time></p>
+            <p>Blog post content goes here...</p>
+        </article>
+        <!-- Repeat the <article> element for each blog post -->
+    </main>
+
+    <footer>
+        <p>© 2023 Your Name. Follow me on <a href="#">Twitter</a>, <a href="#">Instagram</a>.</p>
+    </footer>
+
+</body>
+
+</html>

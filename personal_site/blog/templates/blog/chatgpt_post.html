@@ -1,0 +1,50 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'blog/chatgpt_style.css' %}">
+    <title>Blog Post Title</title>
+</head>
+
+<body>
+
+    <header>
+        <h1>Your Blog Title</h1>
+        <nav>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <article>
+            <h2>Blog Post Title</h2>
+            <p>Date: <time datetime="2023-09-19">September 19, 2023</time></p>
+            <img src="{% static 'blog/images/opacity-altered-man-at-desk.png' %}" alt="Descriptive text for image" />
+            <p>First paragraph of the blog post...</p>
+            <p>Second paragraph and so on...</p>
+            <!-- Add more content as needed -->
+        </article>
+
+        <section id="comments">
+            <h3>Comments</h3>
+            <div class="comment">
+                <p><strong>John Doe:</strong> Great post!</p>
+            </div>
+            <!-- Repeat the <div class="comment"> for each comment -->
+        </section>
+    </main>
+
+    <footer>
+        <p>© 2023 Your Name. Follow me on <a href="#">Twitter</a>, <a href="#">Instagram</a>.</p>
+    </footer>
+
+</body>
+
+</html>
