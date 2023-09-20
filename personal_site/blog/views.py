@@ -13,7 +13,7 @@ import os
 
 
 def index(request):
-    content = Post.objects.all()
+    content = Post.objects.all()[5:]
     is_authenticated = request.user.is_authenticated
     return render(
         request,

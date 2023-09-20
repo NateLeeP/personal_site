@@ -1,20 +1,25 @@
-{% extends "blog/base.html" %}
+{% extends "base_templates/index.html" %}
+{% load static %}
+
+{% block stylesheet %}
+<link rel="stylesheet" href="{% static 'blog/blog_post_style.css' %}">
+
+{% endblock %}
+
 {% block body %}
-<div>
-    <div class="blog_title">
-        <h2>
-            <i>{{post}}</i> 
-        </h2>
-        <a href="{% url 'blog:home' %}">Home</a>
-        {% if is_authenticated %}
-        <a href="{% url 'blog:edit-post' post_id %}">Edit Post</a>
-        {% endif %}
+
+<div class="blog-post">
+    <h1 class="post-title">{{post}}</h1>
+    <span class="post-date">Published On: {{post.published_at}}</span>
+
+    <div class="post-content">
+        {{ post.post_body | safe}}
     </div>
-    <p>Published on: {{ post.published_at }}</p>
-    <p>Last updated: {{ post.updated_at }}</p>
+
+    <!-- Optional elements -->
+    <div class="post-footer">
+        <span class="post-author">Written by: {{post.author}}</span>
+    </div>
 </div>
 
-<p>
-    {{post.post_body | safe}}
-</p>
 {% endblock %}
