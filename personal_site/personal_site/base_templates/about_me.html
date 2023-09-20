@@ -1,9 +1,32 @@
 {% extends "base_templates/index.html" %}
+{% load static %}
 
+{% block stylesheet %}
+<link rel="stylesheet" href="{% static 'personal_site/about_me_style.css' %}">
+{% endblock %}
 {% block body %}
-<h2>About Me</h2>
-<p>Former financial services professional turned software engineer. 
-    I attended the HackReactor bootcamp from October 2020 to January 2021, 
-    and began my professional engineering career in June 2021. 
-</p>
+<div class="about-me">
+    <h1>Welcome to Nate's Island</h1>
+
+    <img src="path_to_your_image.jpg" alt="Your Name" class="profile-picture">
+
+    <p class="bio">
+        Hello! I'm [Your Name], a passionate [profession/hobby, e.g., "web developer" or "travel enthusiast"].
+        [Continue with 2-3 sentences about your background, interests, etc.]
+    </p>
+
+    <ul class="personal-details">
+        <li><strong>Location:</strong> [Your City], [Your Country]</li>
+        <li><strong>Email:</strong> [Your Email]</li>
+        <!-- Add more details if you wish -->
+    </ul>
+
+    <p class="connect">
+        Connect with me on
+        <a href="your_linkedin_profile_url">LinkedIn</a>,
+        <a href="your_twitter_profile_url">Twitter</a>,
+        <a href="your_other_social_media_url">[Other Social Media]</a>.
+    </p>
+</div>
+
 {% endblock %}

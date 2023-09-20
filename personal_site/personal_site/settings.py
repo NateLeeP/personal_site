@@ -31,6 +31,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    "personal_site.apps.PersonalSiteConfig",
     "blog.apps.BlogConfig",
     "tinymce",
     "django.contrib.admin",
@@ -136,5 +137,5 @@ TINYMCE_DEFAULT_CONFIG = {
     "bold italic backcolor | alignleft aligncenter "
     "alignright alignjustify | bullist numlist outdent indent | "
     "removeformat | help",
-    "images_upload_url": "upload_image"
+    "images_upload_url": "upload_image",
 }
