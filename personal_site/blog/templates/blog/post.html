@@ -11,6 +11,10 @@
 <div class="blog-post">
     <h1 class="post-title">{{post}}</h1>
     <span class="post-date">Published On: {{post.published_at}}</span>
+    {% if is_authenticated %}
+    <span><a href="{% url 'blog:create-post' %}">Edit Post</a></span>
+    {% endif %}
+
 
     <div class="post-content">
         {{ post.post_body | safe}}
