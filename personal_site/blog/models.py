@@ -18,25 +18,18 @@ class Post(models.Model):
         return self.post_title
 
     post_body = models.TextField()
-    post_title = models.CharField(max_length=20, unique=True)
+    post_title = models.CharField(max_length=100, unique=True)
     published_at = models.DateField(null=True, blank=True)
     updated_at = models.DateField(auto_now=True)
     # Author name for now - will be ID later. Notably, if I assign it as a 'foreign'
     # key, Django will handle the id automatically.
     author = models.ForeignKey(Author, on_delete=models.CASCADE)
 
+
 class PostForm(ModelForm):
     class Meta:
-        model= Post
+        model = Post
         fields = ["post_body", "post_title", "author"]
-        widgets = {
-            "post_body": TinyMCE(attrs={'cols': 80, 'rows': 30})
-        }
-        labels = {
-            'post_body': "Write your cool blog dude"
-        }
-        error_messages = {
-            'post_title': {
-                'unique': 'You need a unique message'
-            }
-        }
+        widgets = {"post_body": TinyMCE(attrs={"cols": 80, "rows": 30})}
+        labels = {"post_body": "Write your cool blog dude"}
+        error_messages = {"post_title": {"unique": "You need a unique message"}}
