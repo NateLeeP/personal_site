@@ -1,1 +1,1 @@
-web: python3 personal_site/manage.py runserver
+web: gunicorn personal_site.wsgi
