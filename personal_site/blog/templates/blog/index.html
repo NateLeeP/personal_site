@@ -9,13 +9,16 @@
 {% block body %}
 
 <div class="blog-homepage">
+    {% if is_authenticated %}
+    <span><a href="{% url 'blog:create-post' %}">Create Post</a></span>
+    {% endif %}
     <h1>Blog</h1>
     {% for post in content %}
     <div class="post">
         <h2>
             <a href="{% url 'blog:post-page' post.id %}">{{ post }} </a>
         </h2>
-        <span class="date">{{post.published_at}}</span>
+        <span class="date">{{post.updated_at}}</span>
     </div>
     {% endfor %}
 </div>
