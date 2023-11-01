@@ -173,4 +173,5 @@ TINYMCE_DEFAULT_CONFIG = {
     "alignright alignjustify | bullist numlist outdent indent | "
     "removeformat | help",
     "images_upload_url": "upload_image",
+    "relative_urls": False,
 }
