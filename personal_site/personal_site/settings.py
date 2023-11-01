@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/4.2/ref/settings/
 import os
 from dotenv import load_dotenv
 from pathlib import Path
+import dj_database_url
 
 # Load.env file
 load_dotenv()
@@ -89,16 +90,32 @@ WSGI_APPLICATION = "personal_site.wsgi.application"
 # Database
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
 
-DATABASES = {
-    "default": {
-        "ENGINE": os.environ.get("DJANGO_DB_ENGINE", "django.db.backends.sqlite3"),
-        "NAME": os.environ.get("DJANGO_DB_NAME", os.path.join(BASE_DIR / "db.sqlite3")),
-        "USER": os.environ.get("DJANGO_DB_USER", ""),
-        "PASSWORD": os.environ.get("DJANGO_DB_PASSWORD", ""),
-        "HOST": os.environ.get("DJANGO_DB_HOST", ""),
-        "PORT": os.environ.get("DJANGO_DB_PORT", ""),
+if IS_HEROKU_APP:
+    # In production on Heroku the database configuration is derived from the `DATABASE_URL`
+    # environment variable by the dj-database-url package. `DATABASE_URL` will be set
+    # automatically by Heroku when a database addon is attached to your Heroku app. See:
+    # https://devcenter.heroku.com/articles/provisioning-heroku-postgres
+    # https://github.com/jazzband/dj-database-url
+    DATABASES = {
+        "default": dj_database_url.config(
+            conn_max_age=600,
+            conn_health_checks=True,
+            ssl_require=True,
+        ),
     }
-}
+else:
+    DATABASES = {
+        "default": {
+            "ENGINE": os.environ.get("DJANGO_DB_ENGINE", "django.db.backends.sqlite3"),
+            "NAME": os.environ.get(
+                "DJANGO_DB_NAME", os.path.join(BASE_DIR / "db.sqlite3")
+            ),
+            "USER": os.environ.get("DJANGO_DB_USER", ""),
+            "PASSWORD": os.environ.get("DJANGO_DB_PASSWORD", ""),
+            "HOST": os.environ.get("DJANGO_DB_HOST", ""),
+            "PORT": os.environ.get("DJANGO_DB_PORT", ""),
+        }
+    }
 
 
 # Password validation
