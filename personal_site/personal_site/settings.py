@@ -87,9 +87,9 @@ TEMPLATES = [
 WSGI_APPLICATION = "personal_site.wsgi.application"
 
 # SSL - Route to SSL certificate if deployed on Heroku
-if IS_HEROKU_APP:
-    SECURE_SSL_REDIRECT = True
-    SECURE_PROXY_SSL_HEADER = ("HTTP_X_FORWARDED_PROTO", "https")
+# if IS_HEROKU_APP:
+#     SECURE_SSL_REDIRECT = True
+#     SECURE_PROXY_SSL_HEADER = ("HTTP_X_FORWARDED_PROTO", "https")
 
 # Database
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
