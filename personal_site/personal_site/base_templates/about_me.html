@@ -6,18 +6,24 @@
 {% endblock %}
 {% block body %}
 <div class="about-me">
-    <h1>Welcome to Nate's Island</h1>
-
-    <img src="{% static '/blog/images/opacity-altered-man-at-desk.png' %}" alt="Your Name" class="profile-picture">
-
+    <div class="about_me__profile__container">
+        <img src="{% static '/blog/images/opacity-altered-man-at-desk.png' %}" alt="Picture of Nate"
+            class="profile-picture">
+        <ul class="about_me__list">
+            <li>Software Engineer</li>
+            <li>Ex-Financial Planner</li>
+            <li>Christian</li>
+        </ul>
+    </div>
     <p class="bio">
         Hello! I'm [Your Name], a passionate [profession/hobby, e.g., "web developer" or "travel enthusiast"].
         [Continue with 2-3 sentences about your background, interests, etc.]
     </p>
 
     <ul class="personal-details">
-        <li><strong>Location:</strong> [Your City], [Your Country]</li>
-        <li><strong>Email:</strong> [Your Email]</li>
+        <li><strong>Location:</strong> Chicago, Illinois</li>
+        <li><strong>Email: </strong><a href="mailto:nlpruitt@gmail.com">Gmail</a></li>
+        <li>Download Resume</li>
         <!-- Add more details if you wish -->
     </ul>
 

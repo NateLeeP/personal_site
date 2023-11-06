@@ -1,3 +1,17 @@
+body {
+    margin: 0 auto;
+    width: 50%;
+}
+
+.about_me__profile__container {
+    display: flex;
+    align-items: center;
+}
+
+.about_me__list {
+    font-size: 24px;
+}
+
 .about-me {
     font-family: Arial, sans-serif;
     margin: 0 auto;
@@ -15,7 +29,7 @@ h1 {
 .profile-picture {
     display: block;
     max-width: 200px;
-    margin: 0 auto 30px auto;
+    /* margin: 0 auto 30px auto; */
     /* centers the image */
     border-radius: 50%;
     /* makes the image round */

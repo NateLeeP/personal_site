@@ -9,16 +9,17 @@
     <link rel="stylesheet" href="{% static 'blog/chatgpt_style.css' %}">
     {% block stylesheet %}
     {% endblock %}
-    <title>Nate P Island</title>
+    <title>Nate Pruitt</title>
 </head>
 
 <body>
     <header>
-        <h1>Nate P Island</h1>
+        <h1>Nate Pruitt</h1>
         <nav>
             <ul>
-                <li><a href="{% url 'home' %}">Home</a></li>
+                <li><a href="{% url 'about_me' %}">About</a></li>
                 <li><a href="{% url 'blog:home' %}">Blog</a></li>
+                <li>Projects</li>
             </ul>
         </nav>
     </header>
