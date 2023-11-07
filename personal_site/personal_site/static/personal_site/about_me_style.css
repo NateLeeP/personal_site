@@ -3,13 +3,8 @@ body {
     width: 50%;
 }
 
-.about_me__profile__container {
-    display: flex;
-    align-items: center;
-}
-
-.about_me__list {
-    font-size: 24px;
+h2 {
+    text-align: center;
 }
 
 .about-me {
@@ -29,7 +24,7 @@ h1 {
 .profile-picture {
     display: block;
     max-width: 200px;
-    /* margin: 0 auto 30px auto; */
+    margin: 0 auto 30px auto;
     /* centers the image */
     border-radius: 50%;
     /* makes the image round */

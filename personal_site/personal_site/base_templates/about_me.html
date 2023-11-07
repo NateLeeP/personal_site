@@ -6,32 +6,48 @@
 {% endblock %}
 {% block body %}
 <div class="about-me">
-    <div class="about_me__profile__container">
-        <img src="{% static '/blog/images/opacity-altered-man-at-desk.png' %}" alt="Picture of Nate"
-            class="profile-picture">
-        <ul class="about_me__list">
-            <li>Software Engineer</li>
-            <li>Ex-Financial Planner</li>
-            <li>Christian</li>
-        </ul>
-    </div>
+    <h2>Welcome to Nate P's Site</h2>
+    <img src="{% static '/blog/images/opacity-altered-man-at-desk.png' %}" alt="Picture of Nate"
+        class="profile-picture">
     <p class="bio">
-        Hello! I'm [Your Name], a passionate [profession/hobby, e.g., "web developer" or "travel enthusiast"].
-        [Continue with 2-3 sentences about your background, interests, etc.]
+        I'm a software engineer who transitioned from the world of financial planning to the realm of app development.
+        My journey into tech was possible thanks to a rigorous three month coding bootcamp that introduced me to full
+        stack development
+        via tools written in JavaScript (React, ExpressJS, etc). My current professional project is building an internal
+        workflow application that increases efficiency by decreasing human time spent on repetitive tasks. It is a
+        single page application written in Vue.js, with a backend API service written in Python with the FastAPI
+        framework. The application is supported by several AWS Lambda functions that handle event driven tasks.
     </p>
+    <p class="bio">
+        My approach to life is guided by my Christian faith in God and Jesus Christ, which serves as both an anchor and
+        compass. Like many
+        Christians, I consider myself a spiritual work in progress. Engaging with the Bible and Christian Theology
+        deepens and strengthens my relationship with God. While I still (and will forever) stumble, my faith
+        in God serves as foundation and guiding force in my personal and professional life.
+    </p>
+    <p class="bio">
+        In my spare time, I enjoy strumming guitar, reading, and exercising. I've recently picked up boxing in the hopes
+        of one day sparring with an opponent. I usual had a coding side project (including this site!) that I start the
+        day by working on. I feel I have the most focus in the morning and accomplishing a task early creates positive
+        momentum for the rest of the day.
+    </p>
+
 
     <ul class="personal-details">
         <li><strong>Location:</strong> Chicago, Illinois</li>
         <li><strong>Email: </strong><a href="mailto:nlpruitt@gmail.com">Gmail</a></li>
-        <li>Download Resume</li>
+        <li><a href="{% static 'personal_site/documents/NatePruittResume.pdf' %}" download>Download Resume</a></li>
         <!-- Add more details if you wish -->
     </ul>
 
-    <p class="connect">
-        Connect with me on
-        <a href="your_linkedin_profile_url">LinkedIn</a>,
-        <a href="your_twitter_profile_url">Twitter</a>,
-        <a href="your_other_social_media_url">[Other Social Media]</a>.
+    <p>
+        <a href="https://www.linkedin.com/in/nathanielpruitt/">
+            <img src="{% static '/personal_site/images/linkedin_logo.png' %}" height="50" width="50">
+        </a>
+        </img>
+        <a href="https://github.com/NateLeeP">
+            <img src="{% static '/personal_site/images/github_logo.png' %}" height="50" width="50">
+        </a>
     </p>
 </div>
 
