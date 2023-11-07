@@ -1,3 +1,8 @@
+body {
+    margin: 0;
+    width: 100%;
+}
+
 .blog-post {
     font-family: Arial, sans-serif;
     max-width: 900px;
