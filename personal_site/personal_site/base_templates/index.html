@@ -14,7 +14,9 @@
 
 <body>
     <header>
-        <h1>Nate Pruitt</h1>
+
+    </header>
+    <main class="content">
         <nav>
             <ul>
                 <li><a href="{% url 'about_me' %}">About</a></li>
@@ -22,9 +24,9 @@
                 <li>Projects</li>
             </ul>
         </nav>
-    </header>
-    {% block body %}
-    {% endblock %}
+        {% block body %}
+        {% endblock %}
+    </main>
 </body>
 
 </html>

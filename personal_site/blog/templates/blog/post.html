@@ -10,7 +10,7 @@
 
 <div class="blog-post">
     <h1 class="post-title">{{post}}</h1>
-    <span class="post-date">Published On: {{post.updated_at}}</span>
+    <span class="post-date">Updated On: {{post.updated_at}}</span>
     {% if is_authenticated %}
     <span><a href="{% url 'blog:edit-post' post.id %}">Edit Post</a></span>
     {% endif %}
