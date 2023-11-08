@@ -46,6 +46,7 @@ ALLOWED_HOSTS = ["*"] if IS_HEROKU_APP else []
 INSTALLED_APPS = [
     "personal_site.apps.PersonalSiteConfig",
     "blog.apps.BlogConfig",
+    "project.apps.ProjectConfig",
     "tinymce",
     "django.contrib.admin",
     "django.contrib.auth",
