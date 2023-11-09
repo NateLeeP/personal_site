@@ -1,0 +1,13 @@
+a {
+    color: -webkit-link;
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+.project-content {
+    width: 75%;
+    margin: 0px 0px 0px 50px;
+    background-color: ghostwhite;
+    padding: 10px;
+    border-radius: 20px;
+}
