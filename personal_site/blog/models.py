@@ -15,10 +15,11 @@ class Author(models.Model):
 
 class Post(models.Model):
     def __str__(self):
-        return self.post_title
+        return self.post_body[0:5] + "..."
 
     post_body = models.TextField()
     post_title = models.CharField(max_length=100, unique=True)
+    post_preview = models.TextField(null=True)
     published_at = models.DateField(null=True, blank=True)
     updated_at = models.DateField(auto_now=True)
     # Author name for now - will be ID later. Notably, if I assign it as a 'foreign'
