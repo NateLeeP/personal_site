@@ -2,20 +2,24 @@
 {% load static %}
 
 {% block stylesheet %}
-<link rel="stylesheet" href="{% static 'project/project_home_style' %}">
+<link rel="stylesheet" href="{% static 'project/project_page.css' %}">
 
 {% endblock %}
 {% block body %}
-<h3>API Stress Testing</h3>
-<p>
-    <a href="https://github.com/NateLeeP/api_load_test_project">Github Repo</a>
-</p>
-<p>
-    Project goal was to compare performance of APIs written in different languages. Languages were Go, Python, and
-    JavaScript.
-    This project was my introduction to Go. The language was simple and intuitive, and I'd like to write more of it in
-    the future.
-    A full write up of my results and takeaways can be found on the repo.
-</p>
+<div class="project-content">
 
+    <h3>API Stress Testing</h3>
+    <p>
+        <a href="https://github.com/NateLeeP/api_load_test_project">Github Repo <img
+                src="{% static 'personal_site/images/github_logo.png' %}" height=25 width=25 /></a>
+    </p>
+    <p>
+        Project goal was to compare performance of APIs written in different languages. Languages were Go, Python, and
+        JavaScript.
+        This project was my introduction to Go. The language was simple and intuitive, and I'd like to write more of it
+        in
+        the future.
+        A full write up of my results and takeaways can be found on the repo.
+    </p>
+</div>
 {% endblock %}

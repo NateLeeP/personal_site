@@ -15,9 +15,17 @@
     {% for post in content %}
     <div class="post">
         <h3>
-            <a href="{% url 'blog:post-page' post.id %}">{{ post }} </a>
-            </h2>
-            <span class="date">{{post.updated_at}}</span>
+            <a href="{% url 'blog:post-page' post.id %}">{{ post.post_title }} </a>
+        </h3>
+        {% if post.post_preview %}
+
+        {{post.post_preview}}
+
+        <br />
+        {% endif %}
+        <span class="date">{{post.updated_at}}</span>
+        <br />
+        <a href="{% url 'blog:post-page' post.id %}" class="read_more_link">Read More</a>
     </div>
     {% endfor %}
 </div>
