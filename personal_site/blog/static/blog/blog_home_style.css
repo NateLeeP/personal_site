@@ -25,3 +25,9 @@ h3 {
     font-size: 16px;
     color: #7f8c8d;
 }
+
+.read_more_link {
+    color: -webkit-link;
+    cursor: pointer;
+    text-decoration: underline;
+}
